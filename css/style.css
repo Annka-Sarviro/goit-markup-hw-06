@@ -218,7 +218,9 @@ img {
   color: var(--primary-white-color);
 }
 
-.hero-btn {
+.hero-btn,
+.modal-submit-button,
+.subscribe-btn {
   font-family: inherit;
   font-weight: 700;
   font-size: 16px;
@@ -454,10 +456,9 @@ img {
 .footer-container {
   display: flex;
   align-items: baseline;
+  justify-content: space-between;
 }
-.contacts {
-  margin-right: 70px;
-}
+
 .subscribe-title {
   font-weight: 700;
   font-size: 14px;
@@ -471,6 +472,12 @@ img {
   display: flex;
   margin-top: 20px;
 }
+
+.subscribe-btn:hover,
+.subscribe-btn:focus {
+  background-color: #188ce8;
+}
+
 .logo-footer {
   display: inline-block;
   margin-bottom: 20px;
@@ -523,6 +530,38 @@ img {
 .footer-icon-social:hover,
 .footer-icon-social:focus {
   background-color: var(--accent-color);
+}
+
+.subscribe-form {
+  display: inline-block;
+  margin-right: 12px;
+  margin-top: 20px;
+}
+
+.subscribe-submit {
+  width: 358px;
+  height: 50px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 4px;
+  background-color: transparent;
+  padding: 15px 16px;
+  color: rgba(255, 255, 255, 0.6);
+  font-family: inherit;
+}
+
+.subscribe-submit::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+.subscribe-btn {
+  display: inline-flex;
+  align-items: center;
+}
+
+.send-icon {
+  width: 24px;
+  height: 24px;
+  fill: var(--primary-white-color);
+  margin-left: 10px;
 }
 /* Portfolio */
 
@@ -669,11 +708,12 @@ img {
   transform: translate(-50%, -50%) scale(1);
   transition: transform 300ms cubic-bezier(0.4, 0, 0.2, 1);
   width: 528px;
-  height: 581px;
+  min-height: 581px;
   background-color: var(--primary-white-color);
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
+  padding: 40px;
 }
 .button-close {
   width: 30px;
@@ -690,8 +730,132 @@ img {
   cursor: pointer;
 }
 
+.button-close:hover .icon-close {
+  fill: var(--accent-color);
+}
+
 .icon-close {
   width: 11px;
   height: 11px;
   fill: black;
+  transition: fill 300ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-title {
+  display: inline-block;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 1.15;
+  text-align: center;
+  letter-spacing: 0.03em;
+  color: var(--text-color);
+  margin-bottom: 12px;
+}
+
+.form-input-box {
+  display: block;
+  position: relative;
+  font-family: inherit;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.17;
+  letter-spacing: 0.01em;
+  color: var(--text-color-add);
+  margin-bottom: 10px;
+}
+
+.form-input {
+  width: 100%;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+  height: 40px;
+  padding: 0 10px 0 42px;
+  margin-top: 4px;
+  color: var(--text-color);
+  transition: order-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: var(--accent-color);
+}
+
+.modal-input-icon {
+  position: absolute;
+  top: 50%;
+  left: 12px;
+  height: 18px;
+  width: 18px;
+  color: var(--text-color);
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.form-input:focus + .modal-input-icon {
+  fill: var(--accent-color);
+}
+
+.textarea-input {
+  min-height: 120px;
+  padding: 12px 16px;
+  resize: none;
+  font-family: inherit;
+}
+
+.textarea-input::placeholder {
+  color: rgba(117, 117, 117, 0.5);
+  font-family: inherit;
+}
+
+.policy-box {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.71;
+  letter-spacing: 0.03em;
+  color: var(--text-color-add);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.policy-checkbox {
+  position: absolute;
+  clip: rect(0 0 0 0);
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+}
+
+.policy-box a {
+  margin-left: 4px;
+  color: var(--accent-color);
+}
+
+.modal-submit-button {
+  display: block;
+  margin: 0 auto;
+  margin-top: 20px;
+}
+
+.modal-submit-button:hover,
+.modal-submit-button:focus {
+  background-color: #188ce8;
+}
+
+.check-icon {
+  height: 16px;
+  width: 16px;
+  fill: transparent;
+  border: 1px solid black;
+  border-radius: 2px;
+  margin-right: 7px;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    fill 250ms cubic-bezier(0.4, 0, 0.2, 1), border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.policy-checkbox:checked + .policy-box .check-icon {
+  box-sizing: content-box;
+  fill: var(--primary-white-color);
+  background-color: var(--accent-color);
+  border: transparent;
 }
