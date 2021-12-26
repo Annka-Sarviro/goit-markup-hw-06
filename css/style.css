@@ -794,7 +794,12 @@ img {
   fill: var(--accent-color);
 }
 
+.textarea-box {
+  margin-bottom: 20px;
+}
+
 .textarea-input {
+  display: block;
   min-height: 120px;
   padding: 12px 16px;
   resize: none;
@@ -834,7 +839,7 @@ img {
 .modal-submit-button {
   display: block;
   margin: 0 auto;
-  margin-top: 20px;
+  margin-top: 30px;
 }
 
 .modal-submit-button:hover,
@@ -846,7 +851,7 @@ img {
   height: 16px;
   width: 16px;
   fill: transparent;
-  border: 1px solid black;
+  border: 2px solid black;
   border-radius: 2px;
   margin-right: 7px;
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
@@ -854,8 +859,7 @@ img {
 }
 
 .policy-checkbox:checked + .policy-box .check-icon {
-  box-sizing: content-box;
   fill: var(--primary-white-color);
   background-color: var(--accent-color);
-  border: transparent;
+  border: 2px solid var(--accent-color);
 }
